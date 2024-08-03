@@ -1,0 +1,47 @@
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    width: 90%;
+    perspective: 1000px;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+  
+.flip {
+    transform: rotateY(180deg) !important;
+}
+  
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: rgba(229,229,229,0);
+}
+  
+/* Style the back side */
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.locked {
+    opacity: 0.5;
+}
