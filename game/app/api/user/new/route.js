@@ -11,8 +11,7 @@ export const POST = async (req)=>{
         })
 
         const user = await newUser.save();
-        console.log(user._id);
-        return new Response(JSON.stringify(user._id),{status:201})
+        return new Response(JSON.stringify(user.username),{status:201})
 
     } catch (error) {
         return new Response(JSON.stringify(error),{status:500})
